@@ -1,0 +1,49 @@
+name: inventario_app
+description: "Inventario UTR"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  http: ^1.2.2
+  path: ^1.9.0
+  path_provider: ^2.1.3     # guardar caché y cola offline
+  image_picker: ^1.1.2      # cámara y galería (Android / iOS)
+  file_picker: ^8.0.6       # elegir fotos en PC y guardar el Excel
+  camera: ^0.11.0           # cámara en Windows
+  camera_windows: ^0.2.1    # parte de la cámara para Windows
+  excel: ^4.0.6             # generar .xlsx
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.1
+  msix: ^3.18.0
+
+flutter:
+  uses-material-design: true
+
+# Ícono de la app (solo las letras UT). Se genera con: dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: "assets/icon/icon.png"
+  android: true
+  ios: false
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/icon/icon_foreground.png"
+  windows:
+    generate: true
+    image_path: "assets/icon/icon.png"
+    icon_size: 256
+msix_config:
+  display_name: Inventario UTR
+  publisher_display_name: Universidad Tecnologica de Altamira
+  identity_name: com.utaltamira.inventario
+  msix_version: 1.0.0.0
